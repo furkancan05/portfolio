@@ -1,6 +1,13 @@
-import { Project } from "../types/projects.types";
+type Projects = {
+  projectName: string;
+  imageLink: string;
+  url: string;
+  description: string;
+  sourceUrl?: string;
+  techs: string[];
+}[];
 
-export const PROJECTS: Project[] = [
+export const PROJECTS: Projects = [
   {
     projectName: "Exchange",
     imageLink: "/images/projects/exchange.png",

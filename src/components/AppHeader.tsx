@@ -1,17 +1,33 @@
+import React from "react";
+import Link from "next/link";
+
+import Container from "~/components/Container";
+
+import { AppNavigation } from "~/config/appNavigation";
+
 export default function AppHeader() {
-  const titles = ["Home", "About", "Projects", "Contact"];
   return (
-    <div className=" flex items-center justify-center fixed w-4/5 py-4 rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm z-50 -top-6 left-1/2 -translate-x-1/2 gap-10 mt-10">
-      {titles.map((title) => {
-        return (
-          <a
-            key={title}
-            className="relative font-bold after:absolute after:h-0.5 after:w-0 after:bg-white after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:transition-all hover:after:w-[120%]"
-          >
-            {title}
-          </a>
-        );
-      })}
-    </div>
+    <header className="w-full fixed top-0 z-50 mix-blend-difference">
+      <Container className="flex items-center justify-between">
+        <nav>
+          <ul className="flex gap-4">
+            {AppNavigation.map((nav) => (
+              <li key={nav}>
+                <Link
+                  href={`#${nav}`}
+                  className="relative font-semibold text-white text-sm cursor-pointer capitalize after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all"
+                >
+                  {nav}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <button className="relative font-semibold text-white text-sm after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary hover:after:w-full after:transition-all">
+          Contact
+        </button>
+      </Container>
+    </header>
   );
 }

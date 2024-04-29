@@ -1,86 +1,37 @@
-import Title from "./Title";
-import Animate from "./Animate";
+import React from "react";
+import Image from "next/image";
 
-import { PROJECTS } from "../config/projects";
+import Title from "~/components/Title";
 
-import { Project } from "../types/projects.types";
-import { Github, Link } from "../icons/icons";
+import { PROJECTS } from "~/config/projects";
 
 export default function Projects() {
   return (
-    <section className="px-[160px]">
-      <Title title="Projects" />
+    <div id="projects" className="w-full max-w-[1200px] mx-auto">
+      <Title title="Projects" description="My Portfolio" />
 
-      <div className="flex-1 grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-3">
-        {PROJECTS.map((project, i) => {
-          return (
-            <Animate delay={i * 200}>
-              <ProjectCard key={project.projectName} project={project} />
-            </Animate>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <div className="w-full rounded-lg p-3 border border-white/30 font-bold hover:-translate-y-2 hover:bg-white/10 transition-all">
-      <div className="w-full aspect-video rounded-t-lg overflow-hidden">
-        <img
-          src={project.imageLink}
-          alt=""
-          className="w-full h-full object-fit"
-        />
-      </div>
-
-      <div className="h-44 my-2">
-        <p className="text-lg">{project.projectName}</p>
-        <small className="text-white/80">{project.description}</small>
-      </div>
-
-      <div className="flex overflow-scroll no-scrollbar gap-2">
-        {project.techs.map((tech) => {
-          return (
-            <div
-              key={tech}
-              className="border border-white/30 bg-white/10 rounded-full px-3 py-1"
-            >
-              <p className="text-xs whitespace-nowrap">{tech}</p>
+      <div className="flex flex-col w-full h-full gap-20">
+        {PROJECTS.map((project) => (
+          <div className="flex flex-row even:flex-row-reverse gap-10">
+            {/* left side */}
+            <div className="w-48 aspect-video flex-1 shadow-2xl p-1 rounded-lg">
+              <Image
+                src={project.imageLink}
+                alt=""
+                width={300}
+                height={300}
+                loading="lazy"
+                className="w-full h-full rounded-md"
+              />
             </div>
-          );
-        })}
-      </div>
 
-      <div className="w-full mt-4 flex items-center justify-between">
-        <a
-          className="flex item-center gap-2 text-white/50 hover:text-white"
-          href={project.url}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Link />
-
-          <span className="text-xs font-bold transition-colors">
-            Live Prewiew
-          </span>
-        </a>
-
-        {project.sourceUrl && (
-          <a
-            href={project.sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex item-center gap-2 text-white/50 hover:text-white"
-          >
-            <Github />
-
-            <span className="text-xs font-bold transition-colors">
-              View source code
-            </span>
-          </a>
-        )}
+            {/* right side */}
+            <div className="flex flex-1 flex-col gap-3 justify-center">
+              <p className="text-lg font-bold">{project.projectName}</p>
+              <span className="text-semibold">{project.description}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

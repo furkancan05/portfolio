@@ -1,88 +1,60 @@
-import Marquee from "react-fast-marquee";
-import { Skills } from "../config/skills";
-import ReactTypingEffect from "react-typing-effect";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+import Section from "~/components/Section";
+import { Social } from "~/config/social";
 
 export default function Landing() {
   return (
-    <section className="flex flex-col justify-between w-full h-[100vh]">
-      <div />
-      <div className="flex flex-col items-center font-bold gap-3">
-        <h3 className="text-2xl">Hey there 👋</h3>
-        <h1 className="text-[64px] leading-[52px]">I'm Furkan Can</h1>
-        <ReactTypingEffect
-          className="h-20"
-          speed={100}
-          eraseSpeed={80}
-          eraseDelay={1500}
-          typingDelay={300}
-          cursor=" "
-          text={["Front End Developer", "Mobile Developer", "Web3 Developer"]}
-          displayTextRenderer={(text, i) => {
-            return (
-              <h1 key={i}>
-                {text.split("").map((char, i) => {
-                  const key = `${i}`;
-                  return (
-                    <span
-                      key={key}
-                      className="text-[72px] text-[#ff4532] drop-shadow-[0px_0px_10px_rgb(255,69,50)]"
-                    >
-                      {char}
-                    </span>
-                  );
-                })}
-              </h1>
-            );
-          }}
-        ></ReactTypingEffect>
+    <Section
+      id="home"
+      background="black"
+      className="relative flex flex-col items-center justify-center overflow-hidden gap-10 md:justify-between md:flex-row md:gap-0"
+    >
+      <div className="flex flex-col items-center text-center md:text-left md:items-start">
+        <small className="text-lg font-semibold text-white/60">
+          Frontend Developer
+        </small>
+        <p className="text-[72px] font-black">Furkan Can</p>
+        <p className="font-semibold text-white/60">
+          Hello I am Furkan Can. I`m currently working on Frontend Developer,{" "}
+          <br />
+          also Mobile Applications and Web3 Projects.
+        </p>
+
+        <Link
+          href="/CV.pdf"
+          target="_blank"
+          className="relative w-fit font-bold mt-5 after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-1 after:bg-primary hover:after:w-full after:transition-all md:mt-10"
+        >
+          Download Resume
+        </Link>
       </div>
 
-      <CustomMarque />
-    </section>
-  );
-}
+      <Image
+        src="/images/photo.jpeg"
+        alt=""
+        width={500}
+        height={500}
+        className="w-[50vw] md:w-[30vw] aspect-square rounded-full"
+      />
 
-function CustomMarque() {
-  return (
-    <div className="flex flex-col w-full h-fit py-2 gap-2 bg-background/20">
-      <Marquee
-        pauseOnHover={true}
-        gradient={true}
-        gradientColor="#030303"
-        speed={50}
-      >
-        {Skills.map((skill) => {
-          return (
-            <div className="flex flex-col items-center w-[200px] rounded-md py-3 mx-1 gap-2 bg-card/30">
-              <div className="flex items-center justify-center ">
-                <img src={skill.imagePath} alt="" className="w-12 h-12" />
-              </div>
-              <span className="font-bold">{skill.name}</span>
-            </div>
-          );
-        })}
-      </Marquee>
-      <Marquee
-        direction="right"
-        pauseOnHover={true}
-        gradient={true}
-        gradientColor="#030303"
-        speed={50}
-      >
-        {Skills.reverse().map((skill, i) => {
-          return (
-            <div
-              key={i}
-              className="flex flex-col items-center w-[200px] rounded-md py-3 mx-1 gap-2 bg-card/30"
-            >
-              <div className="flex items-center justify-center ">
-                <img src={skill.imagePath} alt="" className="w-12 h-12" />
-              </div>
-              <span className="font-bold">{skill.name}</span>
-            </div>
-          );
-        })}
-      </Marquee>
-    </div>
+      {/* Social */}
+      <div className="absolute bottom-2 right-0 flex gap-2">
+        {Social.map((social) => (
+          <div className="p-2 rounded-full border border-0.5 border-white">
+            <Link key={social.name} href={social.link}>
+              {social.icon}
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      {/* Name at the bottom  */}
+      <p className="absolute font-black origin-center tracking-widest opacity-15 text-[72px] -bottom-12 min-[580px]:text-[140px] min-[580px]:-bottom-24 min-[800px]:text-[200px] min-[800px]:-bottom-32">
+        Furkan
+      </p>
+    </Section>
   );
 }

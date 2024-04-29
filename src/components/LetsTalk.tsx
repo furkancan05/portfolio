@@ -1,7 +1,10 @@
-import React from "react";
-import emailjs from "@emailjs/browser";
+"use client";
 
-import Title from "./Title";
+import React from "react";
+
+import Section from "~/components/Section";
+import Title from "~/components/Title";
+import { Input, TextArea } from "~/components/Input";
 
 export default function LetsTalk() {
   const [loading, setLoading] = React.useState(false);
@@ -35,18 +38,21 @@ export default function LetsTalk() {
   };
 
   return (
-    <section className="px-[160px]">
-      <Title title="Lets Talk" />
+    <Section id="contact" background="black">
+      <Title
+        title="Contact"
+        description="Lets Talk"
+        descClassName="text-white/20"
+      />
 
       <div className="flex items-center justify-between gap-10">
         <div className="flex-1 font-extrabold leading-[70px] uppercase">
           <p className="text-3xl">Lets build together</p>
-          <p className="text-[72px]">
-            something <span className="text-primary text-[80px]">COOL</span>
-          </p>
+          <p className="text-[72px]">something</p>
+          <p className="text-primary text-[80px]">COOL</p>
         </div>
 
-        <form className="flex-1 min-w-[400px] font-bold bg-black/20 rounded-md px-10 py-5 border border-white/20">
+        <form className="flex flex-col gap-4 flex-1 min-w-[300px] max-w-[450px] font-bold bg-black/20 rounded-md px-10 py-5 border border-white/20">
           <Input
             label="Full Name"
             name="fullName"
@@ -63,7 +69,7 @@ export default function LetsTalk() {
             onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
           />
 
-          <Input
+          <TextArea
             label="Message"
             name="message"
             placeholder="Enter your message"
@@ -81,32 +87,6 @@ export default function LetsTalk() {
           </button>
         </form>
       </div>
-    </section>
-  );
-}
-
-interface InputProps {
-  label: string;
-  name: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-function Input(props: InputProps) {
-  return (
-    <div className="flex flex-col gap-2 my-10">
-      <label htmlFor={props.label}>{props.label}</label>
-      <input
-        type="text"
-        required
-        name={props.name}
-        id={props.label}
-        value={props.value}
-        placeholder={props.placeholder}
-        onChange={props.onChange}
-        className="py-3 px-5 rounded-full bg-transparent outline outline-white/10 focus:outline-white/80 placeholder:text-sm"
-      />
-    </div>
+    </Section>
   );
 }
