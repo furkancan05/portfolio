@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import Container from "~/components/Container";
+import Container from "~/components/shared/Container";
 
 import { AppNavigation } from "~/config/appNavigation";
 
@@ -10,7 +10,7 @@ export default function AppHeader() {
     <header className="w-full fixed top-0 z-50 mix-blend-difference">
       <Container className="flex items-center justify-between">
         <nav>
-          <ul className="flex gap-4">
+          <ul className="flex gap-4 bg-inherit">
             {AppNavigation.map((nav) => (
               <li key={nav}>
                 <Link

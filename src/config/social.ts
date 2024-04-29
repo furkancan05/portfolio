@@ -1,35 +1,29 @@
 import {
-  Discord,
   Github,
   Instagram,
   Linkedin,
   Telegram,
-} from "~/components/Icons";
+} from "~/components/shared/Icons";
 
 export const Social = [
   {
     name: "Github",
     icon: Github,
-    link: "",
+    link: "https://github.com/furkancan05",
   },
   {
     name: "Linkedin",
     icon: Linkedin,
-    link: "",
+    link: "https://www.linkedin.com/in/furkan-can-8b399a227/",
   },
   {
     name: "Telegram",
     icon: Telegram,
-    link: "",
-  },
-  {
-    name: "Discord",
-    icon: Discord,
-    link: "",
+    link: "https://t.me/@FurkanCan05",
   },
   {
     name: "Instagram",
     icon: Instagram,
-    link: "",
+    link: "https://www.instagram.com/furkanc.05/?next=%2F",
   },
 ];

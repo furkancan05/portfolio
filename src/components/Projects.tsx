@@ -1,20 +1,20 @@
 import React from "react";
 import Image from "next/image";
 
-import Title from "~/components/Title";
+import Title from "~/components/shared/Title";
 
 import { PROJECTS } from "~/config/projects";
 
 export default function Projects() {
   return (
-    <div id="projects" className="w-full max-w-[1200px] mx-auto">
+    <div id="projects" className="w-full max-w-[1200px] mx-auto px-5">
       <Title title="Projects" description="My Portfolio" />
 
       <div className="flex flex-col w-full h-full gap-20">
         {PROJECTS.map((project) => (
           <div className="flex flex-row even:flex-row-reverse gap-10">
             {/* left side */}
-            <div className="w-48 aspect-video flex-1 shadow-2xl p-1 rounded-lg">
+            <div className="w-48 aspect-video flex-1 shadow-2xl p-2 rounded-lg">
               <Image
                 src={project.imageLink}
                 alt=""

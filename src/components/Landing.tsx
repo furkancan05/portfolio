@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Section from "~/components/Section";
+import Section from "~/components/shared/Section";
 import { Social } from "~/config/social";
 
 export default function Landing() {
@@ -10,7 +10,7 @@ export default function Landing() {
     <Section
       id="home"
       background="black"
-      className="relative flex flex-col items-center justify-center overflow-hidden gap-10 md:justify-between md:flex-row md:gap-0"
+      className="relative h-[100vh] flex flex-col items-center justify-center overflow-hidden gap-10 md:justify-between md:flex-row md:gap-0"
     >
       <div className="flex flex-col items-center text-center md:text-left md:items-start">
         <small className="text-lg font-semibold text-white/60">
@@ -44,7 +44,7 @@ export default function Landing() {
       <div className="absolute bottom-2 right-0 flex gap-2">
         {Social.map((social) => (
           <div className="p-2 rounded-full border border-0.5 border-white">
-            <Link key={social.name} href={social.link}>
+            <Link key={social.name} href={social.link} target="_blank">
               {social.icon}
             </Link>
           </div>
@@ -52,7 +52,7 @@ export default function Landing() {
       </div>
 
       {/* Name at the bottom  */}
-      <p className="absolute font-black origin-center tracking-widest opacity-15 text-[72px] -bottom-12 min-[580px]:text-[140px] min-[580px]:-bottom-24 min-[800px]:text-[200px] min-[800px]:-bottom-32">
+      <p className="absolute font-black origin-center tracking-widest opacity-15 text-[72px] -bottom-8 min-[580px]:text-[140px] min-[580px]:-bottom-24 min-[800px]:text-[200px] min-[800px]:-bottom-32">
         Furkan
       </p>
     </Section>

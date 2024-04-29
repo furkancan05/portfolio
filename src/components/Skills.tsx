@@ -9,7 +9,7 @@ export default function Skills() {
       <Marquee
         pauseOnHover={true}
         gradient={true}
-        gradientColor="#ffffff"
+        gradientColor="#f3f3f3"
         speed={50}
       >
         {SkillsConfig.map((skill) => {
@@ -30,7 +30,7 @@ export default function Skills() {
         direction="right"
         pauseOnHover={true}
         gradient={true}
-        gradientColor="#ffffff"
+        gradientColor="#f3f3f3"
         speed={50}
       >
         {SkillsConfig.reverse().map((skill) => {
