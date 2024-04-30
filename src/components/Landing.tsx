@@ -41,7 +41,7 @@ export default function Landing() {
       />
 
       {/* Social */}
-      <div className="absolute bottom-2 right-0 flex gap-2">
+      <div className="absolute bottom-4 right-0 flex gap-2">
         {Social.map((social) => (
           <div className="p-2 rounded-full border border-0.5 border-white">
             <Link key={social.name} href={social.link} target="_blank">

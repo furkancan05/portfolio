@@ -14,7 +14,7 @@ export const PROJECTS: Projects = [
     url: "https://www.balancenetwork.io/",
     description:
       "The Exchange site serves as a CEX exchange site where users can buy and sell cryptocurrencies.",
-    techs: ["React", "Typescript", "CSS"],
+    techs: ["React", "Redux", "Typescript", "CSS"],
   },
   {
     projectName: "NFT Marketplace",
@@ -22,15 +22,37 @@ export const PROJECTS: Projects = [
     url: "https://nft.balancenetwork.io/",
     description:
       "The NFT project allows users to produce, sell and auction NFTs and collectibles through smart contracts.",
-    techs: ["Next.Js", "Typescript", "Tailwind CSS", "Wagmi JS", "Ethers JS"],
+    techs: [
+      "Next.Js",
+      "Zustand",
+      "Typescript",
+      "Tailwind CSS",
+      "Wagmi JS",
+      "Ethers JS",
+    ],
   },
   {
     projectName: "Swap",
     imageLink: "/images/projects/swap.png",
     url: "https://swap.balancenetwork.io/",
     description:
+      "The mobile app of Exchange website. Serves on Android Market and Appple Store.",
+    techs: ["React", "Zustand", "Typescript", "Tailwind CSS", "Wagmi JS"],
+  },
+  {
+    projectName: "Exchange Mobile",
+    imageLink: "/images/projects/exchange-mobile.png",
+    url: "https://play.google.com/store/search?q=balance%20network%20exchange&c=apps",
+    description:
       "Swap application is a platform that allows users to swap crypto assets, contribute to liquidity pools and preserve their assets for certain maturities. Additionally, users can stake their crypto assets.",
-    techs: ["React", "Typescript", "Tailwind CSS", "Wagmi JS"],
+    techs: ["React Native", "Zustand", "Typescript", "Firebase", "APNS"],
+  },
+  {
+    projectName: "Denizcilik Tahkim",
+    imageLink: "/images/projects/denizcilik-tahkim.png",
+    url: "https://denizciliktahkim.org/",
+    description: "A landing page design job I took from outsource.",
+    techs: ["HTML 5", "CSS 3", "Javascript", "PHP"],
   },
   {
     projectName: "can-zoom",

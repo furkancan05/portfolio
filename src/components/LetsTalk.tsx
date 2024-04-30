@@ -5,6 +5,8 @@ import React from "react";
 import Section from "~/components/shared/Section";
 import Title from "~/components/shared/Title";
 import { Input, TextArea } from "~/components/shared/Input";
+import { Social } from "~/config/social";
+import Link from "next/link";
 
 export default function LetsTalk() {
   const [loading, setLoading] = React.useState(false);
@@ -39,7 +41,11 @@ export default function LetsTalk() {
 
   return (
     <footer>
-      <Section id="contact" background="black">
+      <Section
+        id="contact"
+        background="black"
+        className="relative h-fit sm:h-[100vh]"
+      >
         <Title
           title="Contact"
           description="Lets Talk"
@@ -97,6 +103,20 @@ export default function LetsTalk() {
               {loading ? "Sending" : error ? "Try later" : "Sent"}
             </button>
           </form>
+        </div>
+
+        {/* social links */}
+
+        <div className="w-full flex gap-4 justify-center py-4 border-t border-t-solid border-t-white/20 mt-8 sm:absolute bottom-0 sm:mt-0">
+          {Social.map((social) => (
+            <Link
+              href={social.link}
+              target="_blank"
+              className="text-sm font-semibold hover:text-primary transition-colors"
+            >
+              {social.name}
+            </Link>
+          ))}
         </div>
       </Section>
     </footer>
