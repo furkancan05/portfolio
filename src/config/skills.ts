@@ -1,58 +1,72 @@
+import html from "~/assets/images/html.svg";
+import css from "~/assets/images/css.svg";
+import tailwind from "~/assets/images/tailwind.svg";
+import sass from "~/assets/images/sass.svg";
+import javascript from "~/assets/images/javascript.svg";
+import typescript from "~/assets/images/typescript.svg";
+import react from "~/assets/images/react.svg";
+import next from "~/assets/images/next-js.svg";
+import remix from "~/assets/images/remix.svg";
+import git from "~/assets/images/git.svg";
+import github from "~/assets/images/github.svg";
+import figma from "~/assets/images/figma.svg";
+import adobe from "~/assets/images/adobe-xd.svg";
+
 export const Skills = [
   {
     name: "HTML5",
-    imagePath: "/images/html.svg",
+    imagePath: html,
   },
   {
     name: "CSS3",
-    imagePath: "/images/css.svg",
+    imagePath: css,
   },
   {
     name: "Tailwind CSS",
-    imagePath: "/images/tailwind.svg",
+    imagePath: tailwind,
   },
   {
     name: "Sass",
-    imagePath: "/images/sass.svg",
+    imagePath: sass,
   },
   {
     name: "Javascript",
-    imagePath: "/images/javascript.svg",
+    imagePath: javascript,
   },
   {
     name: "Typescript",
-    imagePath: "/images/typescript.svg",
+    imagePath: typescript,
   },
   {
     name: "React Js",
-    imagePath: "/images/react.svg",
+    imagePath: react,
   },
   {
     name: "React Native",
-    imagePath: "/images/react.svg",
+    imagePath: react,
   },
   {
     name: "Next Js",
-    imagePath: "/images/next-js.svg",
+    imagePath: next,
   },
   {
     name: "Remix Js",
-    imagePath: "/images/remix.svg",
+    imagePath: remix,
   },
   {
     name: "Git",
-    imagePath: "/images/git.svg",
+    imagePath: git,
   },
   {
     name: "Github",
-    imagePath: "/images/github.svg",
+    imagePath: github,
   },
   {
     name: "Figma",
-    imagePath: "/images/figma.svg",
+    imagePath: figma,
   },
   {
     name: "Adobe XD",
-    imagePath: "/images/adobe-xd.svg",
+    imagePath: adobe,
   },
 ];

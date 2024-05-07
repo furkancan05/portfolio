@@ -1,6 +1,16 @@
+import { StaticImageData } from "next/image";
+
+// assets
+import exchange from "~/assets/images/projects/exchange.png";
+import nft from "~/assets/images/projects/nft.png";
+import swap from "~/assets/images/projects/swap.png";
+import exchange_mobile from "~/assets/images/projects/exchange-mobile.png";
+import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.png";
+import npm from "~/assets/images/projects/npm.png";
+
 type Projects = {
   projectName: string;
-  imageLink: string;
+  imageLink: StaticImageData;
   url: string;
   description: string;
   sourceUrl?: string;
@@ -10,7 +20,7 @@ type Projects = {
 export const PROJECTS: Projects = [
   {
     projectName: "Exchange",
-    imageLink: "/images/projects/exchange.png",
+    imageLink: exchange,
     url: "https://www.balancenetwork.io/",
     description:
       "The Exchange site serves as a CEX exchange site where users can buy and sell cryptocurrencies.",
@@ -18,7 +28,7 @@ export const PROJECTS: Projects = [
   },
   {
     projectName: "NFT Marketplace",
-    imageLink: "/images/projects/nft.png",
+    imageLink: nft,
     url: "https://nft.balancenetwork.io/",
     description:
       "The NFT project allows users to produce, sell and auction NFTs and collectibles through smart contracts.",
@@ -33,7 +43,7 @@ export const PROJECTS: Projects = [
   },
   {
     projectName: "Swap",
-    imageLink: "/images/projects/swap.png",
+    imageLink: swap,
     url: "https://swap.balancenetwork.io/",
     description:
       "The mobile app of Exchange website. Serves on Android Market and Appple Store.",
@@ -41,7 +51,7 @@ export const PROJECTS: Projects = [
   },
   {
     projectName: "Exchange Mobile",
-    imageLink: "/images/projects/exchange-mobile.png",
+    imageLink: exchange_mobile,
     url: "https://play.google.com/store/search?q=balance%20network%20exchange&c=apps",
     description:
       "Swap application is a platform that allows users to swap crypto assets, contribute to liquidity pools and preserve their assets for certain maturities. Additionally, users can stake their crypto assets.",
@@ -49,14 +59,14 @@ export const PROJECTS: Projects = [
   },
   {
     projectName: "Denizcilik Tahkim",
-    imageLink: "/images/projects/denizcilik-tahkim.png",
+    imageLink: denizcilik_tahkim,
     url: "https://denizciliktahkim.org/",
     description: "A landing page design job I took from outsource.",
     techs: ["HTML 5", "CSS 3", "Javascript", "PHP"],
   },
   {
     projectName: "can-zoom",
-    imageLink: "/images/projects/npm.png",
+    imageLink: npm,
     url: "https://can-zoom-demo.vercel.app/",
     description:
       "An npm package that can zoom on hover and click, also customize uploaded images",

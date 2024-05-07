@@ -23,7 +23,7 @@ export default function Title({
 
       <span
         className={cn(
-          "absolute text-[56px] top-2 left-5 font-black text-black/5 sm:text-[100px] sm:left-20",
+          "absolute text-[48px] top-10 left-10 font-black text-black/5 sm:text-[100px] sm:left-3 sm:top-2",
           descClassName
         )}
       >

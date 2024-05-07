@@ -10,7 +10,7 @@ export default function Container({
   className?: string;
 }) {
   return (
-    <div className={cn("w-full h-full max-w-[1200px] mx-auto p-5", className)}>
+    <div className={cn("w-full h-full max-w-[1200px] mx-auto py-5", className)}>
       {children}
     </div>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 
@@ -5,7 +6,7 @@ import { Skills as SkillsConfig } from "~/config/skills";
 
 export default function Skills() {
   return (
-    <section className="flex flex-col w-full h-fit py-2 gap-2">
+    <section className="flex flex-col bg-white w-full h-fit py-44 gap-2 mt-[100vh] z-50">
       <Marquee
         pauseOnHover={true}
         gradient={true}
@@ -19,7 +20,7 @@ export default function Skills() {
               className="flex flex-col items-center w-[200px] rounded-md py-3 mx-1 gap-2 bg-black/30"
             >
               <div className="flex items-center justify-center">
-                <img src={skill.imagePath} alt="" className="w-12 h-12" />
+                <Image src={skill.imagePath} alt="" className="w-12 h-12" />
               </div>
               <span className="font-bold">{skill.name}</span>
             </div>
@@ -40,7 +41,7 @@ export default function Skills() {
               className="flex flex-col items-center w-[200px] rounded-md py-3 mx-1 gap-2 bg-black/30"
             >
               <div className="flex items-center justify-center">
-                <img src={skill.imagePath} alt="" className="w-12 h-12" />
+                <Image src={skill.imagePath} alt="" className="w-12 h-12" />
               </div>
               <span className="font-bold">{skill.name}</span>
             </div>

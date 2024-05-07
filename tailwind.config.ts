@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "rgba(var(--colors-primary))",
+        white: "rgba(var(--colors-white))",
       },
       keyframes: {
         "title-move": {
