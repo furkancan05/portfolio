@@ -46,7 +46,7 @@ export const PROJECTS: Projects = [
     imageLink: swap,
     url: "https://swap.balancenetwork.io/",
     description:
-      "The mobile app of Exchange website. Serves on Android Market and Appple Store.",
+      "Swap application is a platform that allows users to swap crypto assets, contribute to liquidity pools and preserve their assets for certain maturities. Additionally, users can stake their crypto assets.",
     techs: ["React", "Zustand", "Typescript", "Tailwind CSS", "Wagmi JS"],
   },
   {
@@ -54,7 +54,7 @@ export const PROJECTS: Projects = [
     imageLink: exchange_mobile,
     url: "https://play.google.com/store/search?q=balance%20network%20exchange&c=apps",
     description:
-      "Swap application is a platform that allows users to swap crypto assets, contribute to liquidity pools and preserve their assets for certain maturities. Additionally, users can stake their crypto assets.",
+      "The mobile app of Exchange website. Serves on Android Market and Appple Store.",
     techs: ["React Native", "Zustand", "Typescript", "Firebase", "APNS"],
   },
   {

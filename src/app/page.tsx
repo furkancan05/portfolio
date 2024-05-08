@@ -19,34 +19,34 @@ export default function Home() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const landingRef = React.useRef<HTMLDivElement>(null);
 
-  // React.useEffect(() => {
-  //   const context = gsap.context(() => {
-  //     const timeline = gsap.timeline({
-  //       scrollTrigger: {
-  //         // @ts-ignore
-  //         target: containerRef.current,
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //         scrub: true,
-  //       },
-  //     });
+  React.useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          // @ts-ignore
+          target: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
 
-  //     timeline.to(landingRef.current, { y: 1000 }, 0);
-  //   });
+      timeline.to(landingRef.current, { y: 1000 }, 0);
+    });
 
-  //   return () => context.revert();
-  // }, []);
+    return () => context.revert();
+  }, []);
 
   return (
     <main ref={containerRef}>
       <AppHeader />
 
-      <Landing ref={landingRef} />
+      {/* <Landing ref={landingRef} /> */}
 
-      <Skills />
-      <About />
+      {/* <Skills /> */}
+      {/* <About /> */}
       <Projects />
-      <LetsTalk />
+      {/* <LetsTalk /> */}
     </main>
   );
 }
