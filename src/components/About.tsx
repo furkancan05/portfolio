@@ -5,7 +5,7 @@ import Title from "~/components/shared/Title";
 
 export default function About() {
   return (
-    <Section id="about" background="white" className="py-44">
+    <Section id="about" background="white" className="pb-44">
       <Title title="About" description="Who Am I" />
 
       <p className="w-full font-semibold sm:w-1/2">

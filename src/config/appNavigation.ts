@@ -1,1 +1,1 @@
-export const AppNavigation = ["home", "about", "projects", "contact"];
+export const AppNavigation = ["home", "skills", "about", "projects", "contact"];

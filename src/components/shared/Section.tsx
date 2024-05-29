@@ -22,7 +22,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={cn("w-full h-screen bg-white text-black px-5", {
+      className={cn("w-full bg-white text-black px-5", {
         "bg-black": background === "black",
         "text-white": background === "black",
         "h-fit": large,

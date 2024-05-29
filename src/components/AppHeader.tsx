@@ -19,6 +19,15 @@ export default function AppHeader() {
   }, []);
 
   const handleNavigation = (nav: string) => {
+    if (nav === "home") {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+      return;
+    }
+
     if (nav === "contact") {
       window.scrollTo({
         top: pageHeight as number,
@@ -27,6 +36,7 @@ export default function AppHeader() {
       });
       return;
     }
+
     const section = document.getElementById(nav);
     if (!section) return;
     section.scrollIntoView({ behavior: "smooth" });

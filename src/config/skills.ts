@@ -13,60 +13,66 @@ import figma from "~/assets/images/figma.svg";
 import adobe from "~/assets/images/adobe-xd.svg";
 
 export const Skills = [
-  {
-    name: "HTML5",
-    imagePath: html,
-  },
-  {
-    name: "CSS3",
-    imagePath: css,
-  },
-  {
-    name: "Tailwind CSS",
-    imagePath: tailwind,
-  },
-  {
-    name: "Sass",
-    imagePath: sass,
-  },
-  {
-    name: "Javascript",
-    imagePath: javascript,
-  },
-  {
-    name: "Typescript",
-    imagePath: typescript,
-  },
-  {
-    name: "React Js",
-    imagePath: react,
-  },
-  {
-    name: "React Native",
-    imagePath: react,
-  },
-  {
-    name: "Next Js",
-    imagePath: next,
-  },
-  {
-    name: "Remix Js",
-    imagePath: remix,
-  },
-  {
-    name: "Git",
-    imagePath: git,
-  },
-  {
-    name: "Github",
-    imagePath: github,
-  },
-  {
-    name: "Figma",
-    imagePath: figma,
-  },
-  {
-    name: "Adobe XD",
-    imagePath: adobe,
-  },
+  [
+    {
+      name: "HTML5",
+      imagePath: html,
+    },
+    {
+      name: "CSS3",
+      imagePath: css,
+    },
+    {
+      name: "Tailwind CSS",
+      imagePath: tailwind,
+    },
+    {
+      name: "Sass",
+      imagePath: sass,
+    },
+  ],
+  [
+    {
+      name: "Javascript",
+      imagePath: javascript,
+    },
+    {
+      name: "Typescript",
+      imagePath: typescript,
+    },
+    {
+      name: "React Js",
+      imagePath: react,
+    },
+    {
+      name: "React Native",
+      imagePath: react,
+    },
+    {
+      name: "Next Js",
+      imagePath: next,
+    },
+    {
+      name: "Remix Js",
+      imagePath: remix,
+    },
+  ],
+  [
+    {
+      name: "Git",
+      imagePath: git,
+    },
+    {
+      name: "Github",
+      imagePath: github,
+    },
+    {
+      name: "Figma",
+      imagePath: figma,
+    },
+    {
+      name: "Adobe XD",
+      imagePath: adobe,
+    },
+  ],
 ];

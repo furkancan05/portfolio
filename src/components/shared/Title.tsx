@@ -21,14 +21,14 @@ export default function Title({
         {title}
       </h1>
 
-      <span
+      <h2
         className={cn(
           "absolute text-[48px] top-10 left-10 font-black text-black/5 sm:text-[100px] sm:left-3 sm:top-2",
           descClassName
         )}
       >
         {description}
-      </span>
+      </h2>
     </div>
   );
 }

@@ -43,7 +43,7 @@ export default function LetsTalk() {
   };
 
   return (
-    <footer className="fixed bottom-0 w-full h-screen -z-50">
+    <footer className="fixed bottom-0 w-full h-screen -z-20">
       <Section id="contact" background="black">
         <Title
           title="Contact"
