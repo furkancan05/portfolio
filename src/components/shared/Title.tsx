@@ -17,9 +17,9 @@ export default function Title({
 }: TitleProps) {
   return (
     <div className="relative py-16">
-      <h1 className={cn("font-black text-3xl z-10 sm:text-[56px]", className)}>
+      <h2 className={cn("font-black text-3xl z-10 sm:text-[56px]", className)}>
         {title}
-      </h1>
+      </h2>
 
       <h2
         className={cn(

@@ -98,7 +98,7 @@ export default function Projects() {
                     target="_blank"
                     className="relative font-semibold after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black group-odd:after:bg-white hover:after:w-full after:transition-all"
                   >
-                    Wiew
+                    View
                   </Link>
 
                   {project.sourceUrl ? (

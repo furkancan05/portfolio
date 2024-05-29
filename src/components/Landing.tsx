@@ -75,9 +75,9 @@ function Landing() {
           <small className="font-semibold text-white/60">
             Frontend Developer
           </small>
-          <p className="text-[48px] font-black font-['NF_Ultra'] tracking-[0.3rem]">
+          <h1 className="text-[48px] font-black font-['NF_Ultra'] tracking-[0.3rem]">
             FURKAN CAN
-          </p>
+          </h1>
           <p className="font-semibold text-white/60">
             Hello I am Furkan Can. I`m working as Frontend Developer, <br />
             also Mobile Applications and Web3 Projects.

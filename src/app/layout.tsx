@@ -9,7 +9,20 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Furkan Can - Frontend Developer | Mobile Developer | Web3 Developer",
-  description: "Furkan Can Official Portfolio Website",
+  description:
+    "Welcome to Furkan Can's portfolio. Discover my projects and skills in web development.",
+  authors: [{ name: "Furkan Can", url: "https://furkancan.com" }],
+  keywords:
+    "Furkan Can, Front End Developer, Web Developer, React, Next, Web3, Blockchain, JavaScript, Typescript, React, Portfolio",
+  openGraph: {
+    title:
+      "Furkan Can - Frontend Developer | Mobile Developer | Web3 Developer",
+    description:
+      "Explore Furkan Can's portfolio showcasing projects and skills in front end development",
+    images: ["../assets/images/photo.jpeg"],
+    url: "https://furkancan.com",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

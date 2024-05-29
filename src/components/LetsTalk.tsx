@@ -2,10 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 
 // components
 import Section from "~/components/shared/Section";
 import Title from "~/components/shared/Title";
+import { Loader } from "~/components/shared/Icons";
 import { Input, TextArea } from "~/components/shared/Input";
 
 // config
@@ -13,33 +15,56 @@ import { Social } from "~/config/social";
 
 export default function LetsTalk() {
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(false);
+  const [disabledButton, setDisabledButton] = React.useState(true);
+  const [buttonText, setButtonText] = React.useState("Send");
 
-  const [inputs, setInputs] = React.useState({
-    fullName: "",
-    email: "",
-    message: "",
-  });
+  const formRef = React.useRef<HTMLFormElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+  // enable send button if all areas are fill
+  const checkDisabled = () => {
+    if (!formRef || !formRef.current) return setDisabledButton(true);
+
+    const fullName = formRef.current[0];
+    const email = formRef.current[1];
+    const message = formRef.current[2];
+
+    // @ts-ignore // kalkacak
+    if (!!fullName.value && !!email.value && !!message.value) {
+      setDisabledButton(false);
+    } else {
+      setDisabledButton(true);
+    }
+  };
+
+  // send email function
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement> | undefined
+  ) => {
+    if (!e) return;
+
     e.preventDefault();
     setLoading(true);
 
-    // const response = await emailjs.sendForm(
-    //   "service_49woq7j",
-    //   "template_tcgpbkq",
-    //   inputs,
-    //   {
-    //     publicKey: "Pg-SlRkGVEmk-JPL_",
-    //   }
-    // );
+    try {
+      await emailjs.sendForm(
+        "service_49woq7j",
+        "template_tcgpbkq",
+        e.currentTarget,
+        {
+          publicKey: "Pg-SlRkGVEmk-JPL_",
+        }
+      );
 
-    // if (response.status !== 200) {
-    //   setLoading(false);
-    //   setError(true);
-    // }
+      setButtonText("Sent!");
+      setLoading(false);
 
-    setLoading(false);
+      setTimeout(() => setButtonText("Send"), 2000);
+    } catch {
+      setButtonText("Sorry! An error occured.");
+      setLoading(false);
+
+      setTimeout(() => setButtonText("Send"), 2000);
+    }
   };
 
   return (
@@ -64,41 +89,44 @@ export default function LetsTalk() {
             </p>
           </div>
 
-          <form className="flex flex-col gap-4 flex-1 min-w-[300px] max-w-[450px] font-bold bg-black/20 rounded-md px-10 py-5 border border-white/20">
+          <form
+            ref={formRef}
+            onSubmit={(e) => handleSubmit(e)}
+            className="flex flex-col gap-4 flex-1 min-w-[300px] max-w-[450px] font-bold bg-black/20 rounded-md px-10 py-5 border border-white/20"
+          >
             <Input
               label="Full Name"
               name="fullName"
-              placeholder="Enter your full name"
-              value={inputs.fullName}
-              onChange={(e) =>
-                setInputs({ ...inputs, fullName: e.target.value })
-              }
+              placeholder="John Doe"
+              required
+              onChange={checkDisabled}
             />
             <Input
               label="Email"
               name="email"
-              placeholder="Enter your email"
-              value={inputs.email}
-              onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
+              placeholder="johndoe@email.com"
+              onChange={checkDisabled}
             />
 
             <TextArea
               label="Message"
               name="message"
-              placeholder="Enter your message"
-              value={inputs.message}
-              onChange={(e) =>
-                setInputs({ ...inputs, message: e.target.value })
-              }
+              placeholder="Hello, Mr. Furkan..."
+              onChange={checkDisabled}
             />
 
             <button
               type="submit"
-              disabled={!inputs.email || !inputs.fullName || !inputs.message}
-              onClick={handleSubmit}
+              disabled={disabledButton || loading}
               className="text-lg bg-primary/90 rounded-full py-3 w-full hover:bg-primary transition-colors disabled:bg-primary/20 disabled:text-white/50"
             >
-              {loading ? "Sending" : error ? "Try later" : "Sent"}
+              {loading ? (
+                <div className="w-fit mx-auto animate-spin">
+                  <Loader />
+                </div>
+              ) : (
+                buttonText
+              )}
             </button>
           </form>
         </div>
