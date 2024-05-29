@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Furkan Can - Frontend Developer | Mobile Developer | Web3 Developer",
     description:
       "Explore Furkan Can's portfolio showcasing projects and skills in front end development",
-    images: ["../assets/images/photo.jpeg"],
+    images: ["../assets/images/photo.webp"],
     url: "https://furkancan.com",
     type: "website",
   },

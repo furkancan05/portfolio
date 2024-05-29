@@ -1,12 +1,12 @@
 import { StaticImageData } from "next/image";
 
 // assets
-import exchange from "~/assets/images/projects/exchange.png";
-import nft from "~/assets/images/projects/nft.png";
-import swap from "~/assets/images/projects/swap.png";
-import exchange_mobile from "~/assets/images/projects/exchange-mobile.png";
-import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.png";
-import npm from "~/assets/images/projects/npm.png";
+import exchange from "~/assets/images/projects/exchange.webp";
+import nft from "~/assets/images/projects/nft.webp";
+import swap from "~/assets/images/projects/swap.webp";
+import exchange_mobile from "~/assets/images/projects/exchange-mobile.webp";
+import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
+import npm from "~/assets/images/projects/npm.webp";
 
 type Projects = {
   projectName: string;

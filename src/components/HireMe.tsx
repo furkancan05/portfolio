@@ -18,12 +18,12 @@ export default function HireMe() {
   };
 
   return (
-    <div className="py-44 bg-white bg-red-500">
+    <div className="py-44 bg-white">
       <div className="w-full bg-black cursor-pointer group">
         <Marquee autoFill>
           <p
             onClick={scrollBottom}
-            className="text-white/20 font-black text-[120px] mx-10 group-hover:text-white/30 group-hover:-translate-y-3 group-hover:-translate-x-3 transition-all"
+            className="text-white/20 font-black text-[120px] mx-10 group-hover:text-white/30 group-hover:-translate-y-3 group-hover:translate-x-3 transition-all"
           >
             HIRE ME
           </p>

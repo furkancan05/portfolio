@@ -15,7 +15,7 @@ export default function Skills() {
       className="flex flex-col bg-white w-full h-fit gap-2 mt-[100vh] z-50 pb-44 bg-red-500"
     >
       <Container>
-        <Title title="Skills" description="My Skills" />
+        <Title title="Skills" description="Using Techs" />
 
         <div className="flex flex-col gap-20">
           <div className="flex justify-center gap-10">
