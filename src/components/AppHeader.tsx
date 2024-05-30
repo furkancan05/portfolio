@@ -29,8 +29,10 @@ export default function AppHeader() {
     }
 
     if (nav === "contact") {
+      if (!pageHeight) return;
+
       window.scrollTo({
-        top: pageHeight as number,
+        top: pageHeight,
         left: 0,
         behavior: "smooth",
       });
@@ -39,6 +41,7 @@ export default function AppHeader() {
 
     const section = document.getElementById(nav);
     if (!section) return;
+
     section.scrollIntoView({ behavior: "smooth" });
   };
 

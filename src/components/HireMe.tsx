@@ -10,15 +10,17 @@ export default function HireMe() {
   }, []);
 
   const scrollBottom = () => {
+    if (!pageHeight) return;
+
     window.scrollTo({
-      top: pageHeight as number,
+      top: pageHeight,
       left: 0,
       behavior: "smooth",
     });
   };
 
   return (
-    <div className="py-44 bg-white">
+    <div className="pb-44 bg-white">
       <div className="w-full bg-black cursor-pointer group">
         <Marquee autoFill>
           <p

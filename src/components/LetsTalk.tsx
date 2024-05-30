@@ -40,20 +40,19 @@ export default function LetsTalk() {
   const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement> | undefined
   ) => {
-    if (!e) return;
+    const service = process.env.NEXT_PUBLIC_EMALJS_SERVICE;
+    const template = process.env.NEXT_PUBLIC_EMALJS_TEMPLATE;
+    const key = process.env.NEXT_PUBLIC_EMALJS_KEY;
+
+    if (!e || !service || !template || !key) return;
 
     e.preventDefault();
     setLoading(true);
 
     try {
-      await emailjs.sendForm(
-        "service_49woq7j",
-        "template_tcgpbkq",
-        e.currentTarget,
-        {
-          publicKey: "Pg-SlRkGVEmk-JPL_",
-        }
-      );
+      await emailjs.sendForm(service, template, e.currentTarget, {
+        publicKey: key,
+      });
 
       setButtonText("Sent!");
       setLoading(false);
@@ -68,7 +67,7 @@ export default function LetsTalk() {
   };
 
   return (
-    <footer className="fixed bottom-0 w-full h-screen -z-20">
+    <footer className="fixed bottom-0 w-full h-screen bg-black -z-20">
       <Section id="contact" background="black">
         <Title
           title="Contact"
@@ -92,7 +91,7 @@ export default function LetsTalk() {
           <form
             ref={formRef}
             onSubmit={(e) => handleSubmit(e)}
-            className="flex flex-col gap-4 flex-1 min-w-[300px] max-w-[450px] font-bold bg-black/20 rounded-md px-10 py-5 border border-white/20"
+            className="flex flex-col gap-4 flex-1 w-full md:min-w-[300px] md:max-w-[450px] font-bold bg-black/20 rounded-md p-5 md:px-10 md:py-5 border border-white/20"
           >
             <Input
               label="Full Name"

@@ -1,5 +1,6 @@
 import React from "react";
 
+// components
 import Section from "~/components/shared/Section";
 import Title from "~/components/shared/Title";
 

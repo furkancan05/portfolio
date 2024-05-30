@@ -12,18 +12,18 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="flex flex-col bg-white w-full h-fit gap-2 mt-[100vh] z-50 pb-44 bg-red-500"
+      className="flex flex-col bg-white w-full h-fit gap-2 mt-[100vh] z-50 pb-44 px-5"
     >
       <Container>
         <Title title="Skills" description="Using Techs" />
 
         <div className="flex flex-col gap-20">
-          <div className="flex justify-center gap-10">
+          <div className="flex justify-center gap-5 md:gap-10">
             {SkillsConfig[0].map((skill, index) => {
               return (
                 <div
                   key={index}
-                  className="relative w-28 h-28 p-5 shadow-lg rounded-lg hover:cursor-pointer overflow-hidden group"
+                  className="relative bg-white p-2 w-[78px] md:w-full md:max-w-28 aspect-square md:p-5 shadow-lg rounded-lg hover:cursor-pointer overflow-hidden group"
                 >
                   <Image
                     src={skill.imagePath}
@@ -44,12 +44,12 @@ export default function Skills() {
             })}
           </div>
 
-          <div className="flex justify-center gap-10">
+          <div className="flex flex-wrap justify-center gap-5 md:gap-10">
             {SkillsConfig[1].map((skill, index) => {
               return (
                 <div
                   key={index}
-                  className="relative w-28 h-28 p-5 shadow-lg rounded-lg hover:cursor-pointer overflow-hidden group"
+                  className="relative bg-white p-2 w-[78px] md:w-full md:max-w-28 aspect-square md:p-5 shadow-lg rounded-lg hover:cursor-pointer overflow-hidden group"
                 >
                   <Image
                     src={skill.imagePath}
@@ -70,12 +70,12 @@ export default function Skills() {
             })}
           </div>
 
-          <div className="flex justify-center gap-10">
+          <div className="flex justify-center gap-5 md:gap-10">
             {SkillsConfig[2].map((skill, index) => {
               return (
                 <div
                   key={index}
-                  className="relative w-28 h-28 p-5 shadow-lg rounded-lg hover:cursor-pointer overflow-hidden group"
+                  className="relative bg-white p-2 w-[78px] md:w-full md:max-w-28 aspect-square md:p-5 shadow-lg rounded-lg hover:cursor-pointer overflow-hidden group"
                 >
                   <Image
                     src={skill.imagePath}

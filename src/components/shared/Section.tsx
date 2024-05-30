@@ -1,7 +1,9 @@
 import React from "react";
 
+// components
 import Container from "~/components/shared/Container";
 
+// utils
 import { cn } from "~/utils/cn";
 
 interface SectionProps {
@@ -12,23 +14,19 @@ interface SectionProps {
   className?: string;
 }
 
-export default function Section({
-  id,
-  large,
-  children,
-  background,
-  className,
-}: SectionProps) {
+export default function Section(props: SectionProps) {
   return (
     <section
-      id={id}
+      id={props.id}
       className={cn("w-full bg-white text-black px-5", {
-        "bg-black": background === "black",
-        "text-white": background === "black",
-        "h-fit": large,
+        "bg-black": props.background === "black",
+        "text-white": props.background === "black",
+        "h-fit": props.large,
       })}
     >
-      <Container className={cn("", className)}>{children}</Container>
+      <Container className={cn("", props.className)}>
+        {props.children}
+      </Container>
     </section>
   );
 }

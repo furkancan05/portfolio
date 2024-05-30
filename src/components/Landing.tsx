@@ -46,14 +46,9 @@ function Landing() {
   };
 
   React.useEffect(() => {
-    window.addEventListener("scroll", () => {
-      scrollTrigger();
-    });
+    window.addEventListener("scroll", () => scrollTrigger());
 
-    return () =>
-      window.removeEventListener("scroll", () => {
-        scrollTrigger();
-      });
+    return () => window.removeEventListener("scroll", () => scrollTrigger());
   }, []);
 
   return (
@@ -94,7 +89,7 @@ function Landing() {
         Scroll to explore
       </span>
 
-      <div className={cn("visible", { hidden: !visible })}>
+      <div className={cn("-z-10", { "-z-30": !visible })}>
         <Globe />
       </div>
     </section>

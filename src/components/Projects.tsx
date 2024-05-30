@@ -30,7 +30,7 @@ export default function Projects() {
           trigger: containerRef.current,
           pin: true,
           scrub: 1,
-          snap: 1 / (panels.length - 1),
+          // snap: 1 / (panels.length - 1),
           end: () => "+=" + scrollRef.current?.offsetWidth,
         },
       });
@@ -55,12 +55,12 @@ export default function Projects() {
             key={project.url}
             className="relative min-w-[100vw] w-[100vw] h-full panel flex items-center odd:bg-black group"
           >
-            <div className="max-w-[1250px] mx-auto flex items-center gap-10">
+            <div className="max-w-[1250px] mx-auto flex flex-col md:flex-row items-center gap-10 p-5">
               {/* left side */}
               <Link
                 href={project.url}
                 target="_blank"
-                className="w-[50%] max-w-[50%] aspect-video flex-1 shadow-2xl rounded-lg overflow-hidden"
+                className="w-full md:w-[50%] md:max-w-[50%] aspect-video flex-1 rounded-lg overflow-hidden"
               >
                 <Image
                   src={project.imageLink}
