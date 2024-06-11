@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     url: "https://furkancan.com",
     type: "website",
   },
+  verification: {
+    google: "MIyNPVcwuW2-a1CN_QlCO-BOEyEv4dea6m4VcnwiAyk",
+  },
 };
 
 export default function RootLayout({
