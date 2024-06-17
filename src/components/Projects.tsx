@@ -31,7 +31,7 @@ export default function Projects() {
           pin: true,
           scrub: 1,
           // snap: 1 / (panels.length - 1),
-          end: () => "+=" + scrollRef.current?.offsetWidth,
+          end: () => "+=" + (scrollRef.current?.offsetWidth || 0) * 4,
         },
       });
     }, containerRef);

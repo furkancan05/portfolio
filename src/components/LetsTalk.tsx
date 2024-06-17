@@ -12,62 +12,43 @@ import { Input, TextArea } from "~/components/shared/Input";
 
 // config
 import { Social } from "~/config/social";
+import useEmail from "~/hooks/useEmail";
+import { cn } from "~/utils/cn";
 
 export default function LetsTalk() {
-  const [loading, setLoading] = React.useState(false);
-  const [disabledButton, setDisabledButton] = React.useState(true);
-  const [buttonText, setButtonText] = React.useState("Send");
+  const {
+    loading,
+    disabledButton,
+    buttonText,
+    formRef,
+    checkDisabled,
+    handleSubmit,
+  } = useEmail();
 
-  const formRef = React.useRef<HTMLFormElement>(null);
+  const [visible, setVisible] = React.useState(true);
 
-  // enable send button if all areas are fill
-  const checkDisabled = () => {
-    if (!formRef || !formRef.current) return setDisabledButton(true);
-
-    const fullName = formRef.current[0];
-    const email = formRef.current[1];
-    const message = formRef.current[2];
-
-    // @ts-ignore // kalkacak
-    if (!!fullName.value && !!email.value && !!message.value) {
-      setDisabledButton(false);
+  // changes landing pages z index on scroll
+  // to set footer visible
+  const scrollTrigger = () => {
+    if (window.scrollY > 1000) {
+      setVisible(false);
     } else {
-      setDisabledButton(true);
+      setVisible(true);
     }
   };
 
-  // send email function
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement> | undefined
-  ) => {
-    const service = process.env.NEXT_PUBLIC_EMALJS_SERVICE;
-    const template = process.env.NEXT_PUBLIC_EMALJS_TEMPLATE;
-    const key = process.env.NEXT_PUBLIC_EMALJS_KEY;
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => scrollTrigger());
 
-    if (!e || !service || !template || !key) return;
-
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await emailjs.sendForm(service, template, e.currentTarget, {
-        publicKey: key,
-      });
-
-      setButtonText("Sent!");
-      setLoading(false);
-
-      setTimeout(() => setButtonText("Send"), 2000);
-    } catch {
-      setButtonText("Sorry! An error occured.");
-      setLoading(false);
-
-      setTimeout(() => setButtonText("Send"), 2000);
-    }
-  };
+    return () => window.removeEventListener("scroll", () => scrollTrigger());
+  }, []);
 
   return (
-    <footer className="fixed bottom-0 w-full h-screen bg-black -z-20">
+    <footer
+      className={cn("fixed bottom-0 w-full h-screen bg-black -z-30", {
+        "-z-10": !visible,
+      })}
+    >
       <Section id="contact" background="black">
         <Title
           title="Contact"

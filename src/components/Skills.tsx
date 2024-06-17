@@ -12,12 +12,12 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="flex flex-col bg-white w-full h-fit gap-2 mt-[100vh] z-50 pb-44 px-5"
+      className="flex flex-col bg-white w-full h-fit gap-2 z-50 mt-[100vh] pb-44 px-5"
     >
       <Container>
         <Title title="Skills" description="Using Techs" />
 
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-10 lg:gap-20">
           <div className="flex justify-center gap-5 md:gap-10">
             {SkillsConfig[0].map((skill, index) => {
               return (
@@ -36,7 +36,7 @@ export default function Skills() {
 
                   <div className="absolute top-0 left-0 rounded-lg w-full h-full bg-black/0 group-hover:bg-black/80 transition-colors duration-1000" />
 
-                  <p className="absolute text-lg left-1/2 -translate-x-1/2 top-1/2 translate-y-[100px] group-hover:-translate-y-1/2 text-center text-white font-black transition-all duration-500">
+                  <p className="absolute text-sm lg:text-lg left-1/2 -translate-x-1/2 top-1/2 translate-y-[100px] group-hover:-translate-y-1/2 text-center text-white font-black transition-all duration-500">
                     {skill.name}
                   </p>
                 </div>
@@ -62,7 +62,7 @@ export default function Skills() {
 
                   <div className="absolute top-0 left-0 rounded-lg w-full h-full bg-black/0 group-hover:bg-black/80 transition-colors duration-1000" />
 
-                  <p className="absolute text-lg left-1/2 -translate-x-1/2 top-1/2 translate-y-[100px] group-hover:-translate-y-1/2 text-center text-white font-black transition-all duration-500">
+                  <p className="absolute text-sm lg:text-lg left-1/2 -translate-x-1/2 top-1/2 translate-y-[100px] group-hover:-translate-y-1/2 text-center text-white font-black transition-all duration-500">
                     {skill.name}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export default function Skills() {
 
                   <div className="absolute top-0 left-0 rounded-lg w-full h-full bg-black/0 group-hover:bg-black/80 transition-colors duration-1000" />
 
-                  <p className="absolute text-lg left-1/2 -translate-x-1/2 top-1/2 translate-y-[100px] group-hover:-translate-y-1/2 text-center text-white font-black transition-all duration-500">
+                  <p className="absolute text-sm lg:text-lg left-1/2 -translate-x-1/2 top-1/2 translate-y-[100px] group-hover:-translate-y-1/2 text-center text-white font-black transition-all duration-500">
                     {skill.name}
                   </p>
                 </div>
