@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import emailjs from "@emailjs/browser";
 
 // components
 import Section from "~/components/shared/Section";
@@ -12,16 +11,20 @@ import { Input, TextArea } from "~/components/shared/Input";
 
 // config
 import { Social } from "~/config/social";
+
+// hooks
 import useEmail from "~/hooks/useEmail";
+
+// utils
 import { cn } from "~/utils/cn";
 
 export default function LetsTalk() {
   const {
+    form,
     loading,
     disabledButton,
     buttonText,
-    formRef,
-    checkDisabled,
+    handleInputs,
     handleSubmit,
   } = useEmail();
 
@@ -70,7 +73,6 @@ export default function LetsTalk() {
           </div>
 
           <form
-            ref={formRef}
             onSubmit={(e) => handleSubmit(e)}
             className="flex flex-col gap-4 flex-1 w-full md:min-w-[300px] md:max-w-[450px] font-bold bg-black/20 rounded-md p-5 md:px-10 md:py-5 border border-white/20"
           >
@@ -79,20 +81,23 @@ export default function LetsTalk() {
               name="fullName"
               placeholder="John Doe"
               required
-              onChange={checkDisabled}
+              value={form.fullName}
+              onChange={(e) => handleInputs(e)}
             />
             <Input
               label="Email"
               name="email"
               placeholder="johndoe@email.com"
-              onChange={checkDisabled}
+              value={form.email}
+              onChange={(e) => handleInputs(e)}
             />
 
             <TextArea
               label="Message"
               name="message"
               placeholder="Hello, Mr. Furkan..."
-              onChange={checkDisabled}
+              value={form.message}
+              onChange={(e) => handleInputs(e)}
             />
 
             <button

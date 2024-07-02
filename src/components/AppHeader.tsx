@@ -13,6 +13,18 @@ import { AppNavigation } from "~/config/appNavigation";
 export default function AppHeader() {
   const [pageHeight, setPageHeight] = React.useState<number | null>(null);
 
+  // disable right click
+  React.useEffect(() => {
+    // @ts-expect-error // type error
+    const handleContextmenu = (e) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextmenu);
+    return function cleanup() {
+      document.removeEventListener("contextmenu", handleContextmenu);
+    };
+  }, []);
+
   React.useEffect(() => {
     const height = document.body.scrollHeight + document.body.clientHeight;
     setPageHeight(height);
