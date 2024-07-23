@@ -17,11 +17,6 @@ export const Social = [
     link: "https://www.linkedin.com/in/furkan-can-8b399a227/",
   },
   {
-    name: "Telegram",
-    icon: Telegram,
-    link: "https://t.me/@FurkanCan05",
-  },
-  {
     name: "Instagram",
     icon: Instagram,
     link: "https://www.instagram.com/furkanc.05/?next=%2F",

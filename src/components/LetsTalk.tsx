@@ -29,6 +29,7 @@ export default function LetsTalk() {
   } = useEmail();
 
   const [visible, setVisible] = React.useState(true);
+  const year = new Date().getFullYear();
 
   // changes landing pages z index on scroll
   // to set footer visible
@@ -48,10 +49,15 @@ export default function LetsTalk() {
 
   return (
     <footer
-      className={cn("fixed bottom-0 w-full h-screen bg-black -z-30", {
-        "-z-10": !visible,
-      })}
+      className={cn(
+        "flex flex-col justify-between fixed bottom-0 w-full h-screen bg-black -z-30",
+        {
+          "-z-10": !visible,
+        }
+      )}
     >
+      <div />
+
       <Section id="contact" background="black">
         <Title
           title="Contact"
@@ -115,9 +121,11 @@ export default function LetsTalk() {
             </button>
           </form>
         </div>
+      </Section>
 
-        {/* social links */}
-        <div className="w-full flex justify-center gap-4 py-4 border-t border-t-solid border-t-white/20 mt-8 sm:absolute left-0 bottom-0 sm:mt-0">
+      {/* social links */}
+      <div className="w-full max-w-[1200px] mx-auto flex flex-col justify-between py-4 border-t border-t-solid border-t-white/20 px-5 text-white left-0 bottom-0 sm:flex-row">
+        <div className="flex justify-center gap-4">
           {Social.map((social) => (
             <Link
               key={social.name}
@@ -129,7 +137,9 @@ export default function LetsTalk() {
             </Link>
           ))}
         </div>
-      </Section>
+
+        <span className="text-xs font-semibold hidden sm:block">{`©${year} Furkan Can. All rights reserved.`}</span>
+      </div>
     </footer>
   );
 }
