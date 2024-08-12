@@ -27,6 +27,8 @@ export default function Home() {
 
       <Projects />
 
+      <div id="end" />
+
       <LetsTalk />
     </main>
   );

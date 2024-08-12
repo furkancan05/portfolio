@@ -11,8 +11,6 @@ import { ArrowDown } from "~/components/shared/Icons";
 import { AppNavigation } from "~/config/appNavigation";
 
 export default function AppHeader() {
-  const [pageHeight, setPageHeight] = React.useState<number | null>(null);
-
   // disable right click
   React.useEffect(() => {
     // @ts-expect-error // type error
@@ -23,11 +21,6 @@ export default function AppHeader() {
     return function cleanup() {
       document.removeEventListener("contextmenu", handleContextmenu);
     };
-  }, []);
-
-  React.useEffect(() => {
-    const height = document.body.scrollHeight + document.body.clientHeight;
-    setPageHeight(height);
   }, []);
 
   const handleNavigation = (nav: string) => {
@@ -41,13 +34,7 @@ export default function AppHeader() {
     }
 
     if (nav === "contact") {
-      if (!pageHeight) return;
-
-      window.scrollTo({
-        top: pageHeight,
-        left: 0,
-        behavior: "smooth",
-      });
+      document.getElementById("end")?.scrollIntoView({ behavior: "smooth" });
       return;
     }
 
