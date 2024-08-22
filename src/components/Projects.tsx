@@ -68,7 +68,7 @@ export default function Projects() {
                   width={700}
                   height={700}
                   loading="lazy"
-                  className="w-full h-full rounded-md scale-110 hover:scale-100 transition-transform duration-1000"
+                  className="w-full h-full rounded-md scale-110 hover:scale-100 transition-transform duration-1000 object-cover"
                 />
               </Link>
 

@@ -4,6 +4,7 @@ import { StaticImageData } from "next/image";
 import exchange from "~/assets/images/projects/exchange.webp";
 import nft from "~/assets/images/projects/nft.webp";
 import swap from "~/assets/images/projects/swap.webp";
+import movie_app from "~/assets/images/projects/movie-app.png";
 import exchange_mobile from "~/assets/images/projects/exchange-mobile.webp";
 import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
 import npm from "~/assets/images/projects/npm.webp";
@@ -50,19 +51,34 @@ export const PROJECTS: Projects = [
     techs: ["React", "Zustand", "Typescript", "Tailwind CSS", "Wagmi JS"],
   },
   {
-    projectName: "Exchange Mobile",
-    imageLink: exchange_mobile,
-    url: "https://play.google.com/store/search?q=balance%20network%20exchange&c=apps",
-    description:
-      "The mobile app of Exchange website. Serves on Android Market and Appple Store.",
-    techs: ["React Native", "Zustand", "Typescript", "Firebase", "APNS"],
-  },
-  {
     projectName: "Denizcilik Tahkim",
     imageLink: denizcilik_tahkim,
     url: "https://denizciliktahkim.org/",
     description: "A landing page design job I took from outsource.",
     techs: ["HTML 5", "CSS 3", "Javascript", "PHP"],
+  },
+  {
+    projectName: "Exchange Mobile",
+    imageLink: exchange_mobile,
+    url: "https://play.google.com/store/search?q=balance%20network%20exchange&c=apps",
+    description:
+      "The mobile app of Exchange website. Serves on Android Market and Apple Store.",
+    techs: ["React Native", "Zustand", "Typescript", "Firebase", "APNS"],
+  },
+  {
+    projectName: "Movie App",
+    imageLink: movie_app,
+    url: "https://github.com/furkancan05/movie-app",
+    description:
+      "A movie tracking application written with Expo. Using the MovieDb infrastructure, users can follow current movies, categorize them and manage their favorite movies.",
+    techs: [
+      "React Native",
+      "Expo",
+      "Expo Router",
+      "Zustand",
+      "Typescript",
+      "Async Storage",
+    ],
   },
   {
     projectName: "can-zoom",
