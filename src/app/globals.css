@@ -4,6 +4,10 @@
 
 @import "./fonts.css";
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --colors-primary: 254, 107, 106;
   --colors-white: 243, 243, 243;

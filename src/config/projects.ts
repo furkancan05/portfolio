@@ -9,7 +9,7 @@ import exchange_mobile from "~/assets/images/projects/exchange-mobile.webp";
 import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
 import npm from "~/assets/images/projects/npm.webp";
 
-type Projects = {
+export type Projects = {
   projectName: string;
   imageLink: StaticImageData;
   url: string;
@@ -68,7 +68,8 @@ export const PROJECTS: Projects = [
   {
     projectName: "Movie App",
     imageLink: movie_app,
-    url: "https://github.com/furkancan05/movie-app",
+    url: "",
+    sourceUrl: "https://github.com/furkancan05/movie-app",
     description:
       "A movie tracking application written with Expo. Using the MovieDb infrastructure, users can follow current movies, categorize them and manage their favorite movies.",
     techs: [

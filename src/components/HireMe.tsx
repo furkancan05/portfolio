@@ -12,15 +12,11 @@ export default function HireMe() {
   const scrollBottom = () => {
     if (!pageHeight) return;
 
-    window.scrollTo({
-      top: pageHeight,
-      left: 0,
-      behavior: "smooth",
-    });
+    document.getElementById("end")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <div className="pb-44 bg-white">
+    <div className="pb-44 bg-white cursor-pointer">
       <div className="w-full bg-black cursor-pointer group">
         <Marquee autoFill>
           <p

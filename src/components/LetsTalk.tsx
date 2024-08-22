@@ -62,7 +62,7 @@ export default function LetsTalk() {
         <Title
           title="Contact"
           description="Lets Talk"
-          descClassName="text-white/10"
+          // descClassName="text-white/10"
         />
 
         <div className="flex flex-col items-center justify-between gap-10 sm:flex-row">

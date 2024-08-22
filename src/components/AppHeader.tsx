@@ -11,17 +11,17 @@ import { ArrowDown } from "~/components/shared/Icons";
 import { AppNavigation } from "~/config/appNavigation";
 
 export default function AppHeader() {
-  // disable right click
-  React.useEffect(() => {
-    // @ts-expect-error // type error
-    const handleContextmenu = (e) => {
-      e.preventDefault();
-    };
-    document.addEventListener("contextmenu", handleContextmenu);
-    return function cleanup() {
-      document.removeEventListener("contextmenu", handleContextmenu);
-    };
-  }, []);
+  // // disable right click
+  // React.useEffect(() => {
+  //   // @ts-expect-error // type error
+  //   const handleContextmenu = (e) => {
+  //     e.preventDefault();
+  //   };
+  //   document.addEventListener("contextmenu", handleContextmenu);
+  //   return function cleanup() {
+  //     document.removeEventListener("contextmenu", handleContextmenu);
+  //   };
+  // }, []);
 
   const handleNavigation = (nav: string) => {
     if (nav === "home") {
@@ -45,7 +45,7 @@ export default function AppHeader() {
   };
 
   return (
-    <header className="w-full fixed top-0 z-50 mix-blend-difference px-5">
+    <header className="w-full fixed top-0 z-50 bg-black/40 backdrop-blur-lg px-5">
       <Container className="flex items-center justify-between">
         <nav>
           <ul className="flex gap-4 bg-inherit">

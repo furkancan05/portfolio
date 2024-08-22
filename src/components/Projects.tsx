@@ -5,119 +5,98 @@ import Link from "next/link";
 
 // components
 import Title from "~/components/shared/Title";
+import { ArrowRight } from "~/components/shared/Icons";
+import Section from "~/components/shared/Section";
 
 // config
-import { PROJECTS } from "~/config/projects";
-
-// gsap
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { Projects as ProjectsType, PROJECTS } from "~/config/projects";
 
 export default function Projects() {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollRef = React.useRef<HTMLDivElement>(null);
-
-  React.useLayoutEffect(() => {
-    let gsapContext = gsap.context(() => {
-      let panels = gsap.utils.toArray(".panel");
-
-      gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          pin: true,
-          scrub: 1,
-          // snap: 1 / (panels.length - 1),
-          end: () => "+=" + (scrollRef.current?.offsetWidth || 0) * 4,
-        },
-      });
-    }, containerRef);
-
-    return () => gsapContext.revert();
-  }, []);
-
   return (
-    <div
-      ref={containerRef}
+    <Section
       id="projects"
-      className="w-full h-screen bg-white mb-[100vh] relative"
+      background="white"
+      className="w-full bg-white mb-[100vh]"
     >
-      <div className="w-full md:max-w-[1200px] absolute top-0 left-1/2 px-5 -translate-x-1/2 mix-blend-difference text-white z-50 sm:px-0">
-        <Title title="Projects" description="My Portfolio" />
-      </div>
+      <Title title="Projects" description="My Portfolio" />
 
-      <div ref={scrollRef} className="w-full h-full flex overflow-hidden">
+      <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {PROJECTS.map((project) => (
-          <div
-            key={project.url}
-            className="relative min-w-[100vw] w-[100vw] h-full panel flex items-center odd:bg-black group"
-          >
-            <div className="max-w-[1250px] mx-auto flex flex-col md:flex-row items-center gap-10 p-5">
-              {/* left side */}
-              <Link
-                href={project.url}
-                target="_blank"
-                className="w-full md:w-[50%] md:max-w-[50%] aspect-video flex-1 rounded-lg overflow-hidden"
-              >
-                <Image
-                  src={project.imageLink}
-                  alt=""
-                  width={700}
-                  height={700}
-                  loading="lazy"
-                  className="w-full h-full rounded-md scale-110 hover:scale-100 transition-transform duration-1000 object-cover"
-                />
-              </Link>
-
-              {/* right side */}
-              <div className="flex flex-1 flex-col gap-3 justify-center text-black group-odd:text-white">
-                <p className="text-3xl font-bold">{project.projectName}</p>
-                <span className="font-semibold">{project.description}</span>
-
-                {/* techs */}
-                <div className="flex text-sm font-semibold gap-2 flex-wrap">
-                  {project.techs.map((tech) => (
-                    <div
-                      key={tech}
-                      className="rounded-full px-4 py-2 bg-black text-white group-odd:bg-white group-odd:text-black"
-                    >
-                      {tech}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="h-full"></div>
-
-                {/* links */}
-                <div className="flex justify-between">
-                  <Link
-                    href={project.url}
-                    target="_blank"
-                    className="relative font-semibold after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black group-odd:after:bg-white hover:after:w-full after:transition-all"
-                  >
-                    View
-                  </Link>
-
-                  {project.sourceUrl ? (
-                    <Link
-                      href={project.sourceUrl}
-                      target="_blank"
-                      className="relative font-semibold after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-black group-odd:after:bg-white hover:after:w-full after:transition-all"
-                    >
-                      Source
-                    </Link>
-                  ) : (
-                    <div />
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+          <ProjectCard key={project.projectName} project={project} />
         ))}
       </div>
-    </div>
+    </Section>
   );
+
+  function ProjectCard({ project }: { project: ProjectsType[0] }) {
+    return (
+      <div className="flex flex-col w-full shadow-2xl rounded-lg h-[480px] group overflow-hidden">
+        <div className="w-full aspect-video overflow-hidden rounded-t-md">
+          <Image
+            src={project.imageLink}
+            alt=""
+            width={700}
+            height={700}
+            loading="lazy"
+            className="w-full h-full rounded-md scale-110 group-hover:scale-[102%] transition-transform duration-1000 object-cover"
+          />
+        </div>
+
+        <p className="text-lg font-bold px-2 py-2">{project.projectName}</p>
+
+        <p className="font-semibold text-sm h-44 px-2">{project.description}</p>
+
+        {/* techs */}
+        <div className="flex text-sm font-semibold gap-2 flex-wrap px-2">
+          {project.techs.map((tech) => (
+            <div
+              key={tech}
+              className="flex rounded-full px-3 py-1.5 bg-black text-white text-xs"
+            >
+              {tech}
+            </div>
+          ))}
+        </div>
+
+        {/* links */}
+        <div className="flex justify-between items-end flex-1 m-2 mt-4">
+          {project.url ? (
+            <Link
+              href={project.url}
+              target="_blank"
+              className="relative text-sm group/link cursor-pointer"
+            >
+              <span>View</span>
+
+              <span className="absolute right-0 translate-x-4 opacity-0 group-hover/link:translate-x-6 group-hover/link:opacity-100 transition-all duration-500">
+                <ArrowRight />
+              </span>
+              <span className="absolute right-0 translate-x-6 opacity-100 group-hover/link:translate-x-8 group-hover/link:opacity-0 transition-all duration-500">
+                <ArrowRight />
+              </span>
+            </Link>
+          ) : null}
+
+          {project.sourceUrl ? (
+            <Link
+              href={project.sourceUrl}
+              target="_blank"
+              className="relative text-sm group/link cursor-pointer mr-6"
+            >
+              <span>Source</span>
+
+              <span className="absolute right-0 translate-x-4 opacity-0 group-hover/link:translate-x-6 group-hover/link:opacity-100 transition-all duration-500">
+                <ArrowRight />
+              </span>
+              <span className="absolute right-0 translate-x-6 opacity-100 group-hover/link:translate-x-8 group-hover/link:opacity-0 transition-all duration-500">
+                <ArrowRight />
+              </span>
+            </Link>
+          ) : (
+            <div />
+          )}
+        </div>
+      </div>
+    );
+  }
 }
