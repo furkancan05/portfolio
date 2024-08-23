@@ -20,9 +20,14 @@ const config: Config = {
           "70%": { transform: "translateX(10px) translateY(4px)" },
           "100%": { transform: "translateX(0px) translateY(0px)" },
         },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(100px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "title-move": "title-move 4000ms linear infinite",
+        "fade-in": "fadeIn 0.5s ease-out forwards",
       },
     },
   },

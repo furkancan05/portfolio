@@ -16,7 +16,7 @@ export default function HireMe() {
   };
 
   return (
-    <div className="pb-44 bg-white cursor-pointer">
+    <div className="pb-20 bg-white cursor-pointer">
       <div className="w-full bg-black cursor-pointer group">
         <Marquee autoFill>
           <p

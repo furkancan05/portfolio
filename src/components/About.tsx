@@ -1,12 +1,31 @@
 import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 // components
 import Section from "~/components/shared/Section";
 import Title from "~/components/shared/Title";
 
+// config
+import { Skills } from "~/config/skills";
+
 export default function About() {
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * index,
+      },
+    }),
+  };
+
   return (
-    <Section id="about" background="white" className="pb-44">
+    <Section id="about" background="white" className="pb-44 mt-[100vh]">
       <Title title="About" description="Who Am I" />
 
       <p className="w-full font-semibold">
@@ -23,6 +42,35 @@ export default function About() {
         deliver the best by maintaining the highest level of customer
         satisfaction.
       </p>
+
+      <div className="mt-14 flex w-full flex-wrap gap-6 px-5 justify-center sm:px-0 lg:justify-center">
+        {Skills.map((skill, index) => (
+          <motion.div
+            key={index}
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={index}
+            className="relative group"
+          >
+            <Image
+              src={skill.imagePath}
+              alt=""
+              width={100}
+              height={100}
+              loading="lazy"
+              className="w-14 aspect-square grayscale hover:grayscale-0 transition-all rounded-full"
+            />
+
+            <div className="absolute -top-6 opacity-0 text-xs -left-1/2 translate-x-0 whitespace-nowrap font-semibold text-white bg-black/60 p-2 rounded-md transition-all group-hover:-top-10 group-hover:opacity-100">
+              {skill.name}
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </Section>
   );
 }

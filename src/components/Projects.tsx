@@ -10,8 +10,23 @@ import Section from "~/components/shared/Section";
 
 // config
 import { Projects as ProjectsType, PROJECTS } from "~/config/projects";
+import { motion } from "framer-motion";
 
 export default function Projects() {
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 * index,
+      },
+    }),
+  };
+
   return (
     <Section
       id="projects"
@@ -21,8 +36,19 @@ export default function Projects() {
       <Title title="Projects" description="My Portfolio" />
 
       <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.projectName} project={project} />
+        {PROJECTS.map((project, index) => (
+          <motion.div
+            key={index}
+            variants={fadeInAnimationVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={index}
+          >
+            <ProjectCard project={project} />
+          </motion.div>
         ))}
       </div>
     </Section>

@@ -50,7 +50,7 @@ export default function LetsTalk() {
   return (
     <footer
       className={cn(
-        "flex flex-col justify-between fixed bottom-0 w-full h-screen bg-black -z-30",
+        "flex flex-col fixed bottom-0 w-full h-screen bg-black -z-30",
         {
           "-z-10": !visible,
         }
@@ -59,13 +59,9 @@ export default function LetsTalk() {
       <div />
 
       <Section id="contact" background="black">
-        <Title
-          title="Contact"
-          description="Lets Talk"
-          // descClassName="text-white/10"
-        />
+        <Title title="Contact" description="Lets Talk" />
 
-        <div className="flex flex-col items-center justify-between gap-10 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-2 sm:gap-10 sm:flex-row sm:mt-20">
           <div className="flex-1 font-extrabold leading-[50px] sm:leading-[75px] uppercase text-center sm:text-left">
             <p className="text-lg sm:text-[max(max(12px,2.5vw))]">
               Lets build together
@@ -122,6 +118,8 @@ export default function LetsTalk() {
           </form>
         </div>
       </Section>
+
+      <div className="flex-1" />
 
       {/* social links */}
       <div className="w-full max-w-[1200px] mx-auto flex flex-col justify-between py-4 border-t border-t-solid border-t-white/20 px-5 text-white left-0 bottom-0 sm:flex-row">

@@ -11,7 +11,7 @@ interface TitleProps {
 
 export default function Title(props: TitleProps) {
   return (
-    <div className="relative py-16">
+    <div className="relative py-20">
       <h2
         className={cn(
           "font-black text-3xl z-10 sm:text-[56px]",
@@ -23,7 +23,7 @@ export default function Title(props: TitleProps) {
 
       <h3
         className={cn(
-          "uppercase absolute text-[48px] top-10 left-10 font-black opacity-5 sm:text-[100px] sm:left-3 sm:top-2",
+          "uppercase absolute text-[48px] top-10 left-10 font-black opacity-5 sm:text-[100px] sm:left-3 sm:top-6",
           props.descClassName
         )}
       >

@@ -10,7 +10,6 @@ const AppHeader = dynamic(() => import("~/components/AppHeader"));
 const HireMe = dynamic(() => import("~/components/HireMe"));
 const LetsTalk = dynamic(() => import("~/components/LetsTalk"));
 const Projects = dynamic(() => import("~/components/Projects"));
-const Skills = dynamic(() => import("~/components/Skills"));
 
 export default function Home() {
   return (
@@ -18,8 +17,6 @@ export default function Home() {
       <AppHeader />
 
       <Landing />
-
-      <Skills />
 
       <About />
 
