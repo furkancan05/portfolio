@@ -7,6 +7,7 @@ import swap from "~/assets/images/projects/swap.webp";
 import movie_app from "~/assets/images/projects/movie-app.png";
 import exchange_mobile from "~/assets/images/projects/exchange-mobile.webp";
 import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
+import rick_and_morty_assessment from "~/assets/images/projects/rick-and-morty-assessment.png";
 import npm from "~/assets/images/projects/npm.webp";
 
 export type Projects = {
@@ -79,6 +80,21 @@ export const PROJECTS: Projects = [
       "Zustand",
       "Typescript",
       "Async Storage",
+    ],
+  },
+  {
+    projectName: "Rick and Morty Assessment",
+    imageLink: rick_and_morty_assessment,
+    url: "",
+    sourceUrl: "https://github.com/furkancan05/rick-and-morty-assessment",
+    description: "The task I did for the mobile developer job application",
+    techs: [
+      "React Native",
+      "Tailwind Css",
+      "Expo",
+      "Expo Router",
+      "Zustand",
+      "Immer",
     ],
   },
   {
