@@ -31,7 +31,7 @@ export const PROJECTS: Projects = [
   {
     projectName: "NFT Marketplace",
     imageLink: nft,
-    url: "https://nft.balancenetwork.io/",
+    url: "https://nftmarketplace-wheat-seven.vercel.app/",
     description:
       "The NFT project allows users to produce, sell and auction NFTs and collectibles through smart contracts.",
     techs: [
