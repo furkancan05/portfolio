@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://furkancan.com.tr/
+
+# Sitemaps
+Sitemap: https://furkancan.com.tr/sitemap.xml

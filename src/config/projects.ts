@@ -1,9 +1,11 @@
 import { StaticImageData } from "next/image";
 
 // assets
+import balance_software from "~/assets/images/projects/balance-software.webp";
 import exchange from "~/assets/images/projects/exchange.webp";
 import nft from "~/assets/images/projects/nft.webp";
 import swap from "~/assets/images/projects/swap.webp";
+import articareer from "~/assets/images/projects/articareer.webp";
 import movie_app from "~/assets/images/projects/movie-app.png";
 import exchange_mobile from "~/assets/images/projects/exchange-mobile.webp";
 import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
@@ -21,9 +23,17 @@ export type Projects = {
 
 export const PROJECTS: Projects = [
   {
+    projectName: "Balance Software",
+    imageLink: balance_software,
+    url: "https://balance.software/",
+    description:
+      "The official website of Balance Software, the software solutions company I work with.",
+    techs: ["Next.Js", "Typescript", "SCSS"],
+  },
+  {
     projectName: "Exchange",
     imageLink: exchange,
-    url: "https://www.balancenetwork.io/",
+    url: "",
     description:
       "The Exchange site serves as a CEX exchange site where users can buy and sell cryptocurrencies.",
     techs: ["React", "Redux", "Typescript", "CSS"],
@@ -46,7 +56,7 @@ export const PROJECTS: Projects = [
   {
     projectName: "Swap",
     imageLink: swap,
-    url: "https://swap.balancenetwork.io/",
+    url: "",
     description:
       "Swap application is a platform that allows users to swap crypto assets, contribute to liquidity pools and preserve their assets for certain maturities. Additionally, users can stake their crypto assets.",
     techs: ["React", "Zustand", "Typescript", "Tailwind CSS", "Wagmi JS"],
@@ -57,6 +67,14 @@ export const PROJECTS: Projects = [
     url: "https://denizciliktahkim.org/",
     description: "A landing page design job I took from outsource.",
     techs: ["HTML 5", "CSS 3", "Javascript", "PHP"],
+  },
+  {
+    projectName: "AtriCareer",
+    imageLink: articareer,
+    url: "https://articareer.com/",
+    description:
+      "An artificial intelligence-supported website that allows users to make character analysis and future career choices based on personality based on the survey they enter.",
+    techs: ["React", "Zustand", "Typescript", "Tailwind CSS"],
   },
   {
     projectName: "Exchange Mobile",

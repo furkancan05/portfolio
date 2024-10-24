@@ -56,7 +56,7 @@ export default function Projects() {
 
   function ProjectCard({ project }: { project: ProjectsType[0] }) {
     return (
-      <div className="flex flex-col w-full shadow-2xl rounded-lg h-[480px] group overflow-hidden">
+      <div className="flex flex-col justify-end gap-2 w-full shadow-2xl rounded-lg h-[480px] group overflow-hidden">
         <div className="w-full aspect-video overflow-hidden rounded-t-md">
           <Image
             src={project.imageLink}
@@ -68,12 +68,14 @@ export default function Projects() {
           />
         </div>
 
-        <p className="text-lg font-bold px-2 py-2">{project.projectName}</p>
+        <p className="text-lg font-bold px-2">{project.projectName}</p>
 
-        <p className="font-semibold text-sm h-44 px-2">{project.description}</p>
+        <p className="font-semibold text-sm flex-1 px-2">
+          {project.description}
+        </p>
 
         {/* techs */}
-        <div className="flex text-sm font-semibold gap-2 flex-wrap px-2">
+        <div className="flex text-sm font-semibold gap-2 flex-wrap px-2 h-fit">
           {project.techs.map((tech) => (
             <div
               key={tech}
@@ -85,7 +87,7 @@ export default function Projects() {
         </div>
 
         {/* links */}
-        <div className="flex justify-between items-end flex-1 m-2 mt-4">
+        <div className="flex h-8 justify-between items-end mx-2 mb-2">
           {project.url ? (
             <Link
               href={project.url}
