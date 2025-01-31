@@ -10,6 +10,7 @@ import movie_app from "~/assets/images/projects/movie-app.png";
 import exchange_mobile from "~/assets/images/projects/exchange-mobile.webp";
 import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
 import rick_and_morty_assessment from "~/assets/images/projects/rick-and-morty-assessment.png";
+import blindlover from "~/assets/images/projects/blindlover.webp";
 import npm from "~/assets/images/projects/npm.webp";
 
 export type Projects = {
@@ -25,7 +26,7 @@ export const PROJECTS: Projects = [
   {
     projectName: "Balance Software",
     imageLink: balance_software,
-    url: "https://balance.software/",
+    url: "",
     description:
       "The official website of Balance Software, the software solutions company I work with.",
     techs: ["Next.Js", "Typescript", "SCSS"],
@@ -69,7 +70,7 @@ export const PROJECTS: Projects = [
     techs: ["HTML 5", "CSS 3", "Javascript", "PHP"],
   },
   {
-    projectName: "AtriCareer",
+    projectName: "ArtiCareer",
     imageLink: articareer,
     url: "https://articareer.com/",
     description:
@@ -77,11 +78,25 @@ export const PROJECTS: Projects = [
     techs: ["React", "Zustand", "Typescript", "Tailwind CSS"],
   },
   {
+    projectName: "Blindlover",
+    imageLink: blindlover,
+    url: "https://apps.apple.com/tr/app/blind-lover/id6740008681?l=tr",
+    description:
+      "Artificial intelligence-supported mobile application where partners can see the compatibility between each other.",
+    techs: [
+      "React Native",
+      "Zustand",
+      "Typescript",
+      "Firebase",
+      "APNS",
+      "Google Ads",
+    ],
+  },
+  {
     projectName: "Exchange Mobile",
     imageLink: exchange_mobile,
-    url: "https://play.google.com/store/search?q=balance%20network%20exchange&c=apps",
-    description:
-      "The mobile app of Exchange website. Serves on Android Market and Apple Store.",
+    url: "",
+    description: "The mobile app of Exchange website.",
     techs: ["React Native", "Zustand", "Typescript", "Firebase", "APNS"],
   },
   {
