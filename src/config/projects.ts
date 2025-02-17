@@ -24,22 +24,6 @@ export type Projects = {
 
 export const PROJECTS: Projects = [
   {
-    projectName: "Balance Software",
-    imageLink: balance_software,
-    url: "",
-    description:
-      "The official website of Balance Software, the software solutions company I work with.",
-    techs: ["Next.Js", "Typescript", "SCSS"],
-  },
-  {
-    projectName: "Exchange",
-    imageLink: exchange,
-    url: "",
-    description:
-      "The Exchange site serves as a CEX exchange site where users can buy and sell cryptocurrencies.",
-    techs: ["React", "Redux", "Typescript", "CSS"],
-  },
-  {
     projectName: "NFT Marketplace",
     imageLink: nft,
     url: "https://nftmarketplace-wheat-seven.vercel.app/",
@@ -57,10 +41,18 @@ export const PROJECTS: Projects = [
   {
     projectName: "Swap",
     imageLink: swap,
-    url: "",
+    url: "https://swap-six-beryl.vercel.app/",
     description:
       "Swap application is a platform that allows users to swap crypto assets, contribute to liquidity pools and preserve their assets for certain maturities. Additionally, users can stake their crypto assets.",
     techs: ["React", "Zustand", "Typescript", "Tailwind CSS", "Wagmi JS"],
+  },
+  {
+    projectName: "Exchange",
+    imageLink: exchange,
+    url: "",
+    description:
+      "The Exchange site serves as a CEX exchange site where users can buy and sell cryptocurrencies.",
+    techs: ["React", "Redux", "Typescript", "CSS"],
   },
   {
     projectName: "Denizcilik Tahkim",
