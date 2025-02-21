@@ -49,7 +49,7 @@ export const PROJECTS: Projects = [
   {
     projectName: "Exchange",
     imageLink: exchange,
-    url: "https://exchange-orcin-iota.vercel.app/market",
+    url: "https://exchange-orcin-iota.vercel.app/",
     description:
       "The Exchange site serves as a CEX exchange site where users can buy and sell cryptocurrencies.",
     techs: ["React", "Redux", "Typescript", "CSS"],
