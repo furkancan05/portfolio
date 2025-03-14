@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 
 // assets
-import balance_software from "~/assets/images/projects/balance-software.webp";
 import exchange from "~/assets/images/projects/exchange.webp";
 import nft from "~/assets/images/projects/nft.webp";
 import swap from "~/assets/images/projects/swap.webp";
@@ -11,6 +10,7 @@ import exchange_mobile from "~/assets/images/projects/exchange-mobile.webp";
 import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
 import rick_and_morty_assessment from "~/assets/images/projects/rick-and-morty-assessment.png";
 import blindlover from "~/assets/images/projects/blindlover.webp";
+import task_management from "~/assets/images/projects/task-management.webp";
 import npm from "~/assets/images/projects/npm.webp";
 
 export type Projects = {
@@ -82,6 +82,23 @@ export const PROJECTS: Projects = [
       "Firebase",
       "APNS",
       "Google Ads",
+    ],
+  },
+  {
+    projectName: "Task Management Application",
+    imageLink: task_management,
+    url: "https://task-management-application-black.vercel.app/",
+    sourceUrl: "https://github.com/furkancan05/task-management-application",
+    description:
+      "This project is a study case application prepared for a private company. This application provides a simple system where users can manage their tasks.",
+    techs: [
+      "React",
+      "Zustand",
+      "Typescript",
+      "Local Storage",
+      "Zustand",
+      "TailwindCSS",
+      "Framer Motion",
     ],
   },
   {
