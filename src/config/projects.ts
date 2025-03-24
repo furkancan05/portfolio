@@ -11,6 +11,7 @@ import denizcilik_tahkim from "~/assets/images/projects/denizcilik-tahkim.webp";
 import rick_and_morty_assessment from "~/assets/images/projects/rick-and-morty-assessment.png";
 import blindlover from "~/assets/images/projects/blindlover.webp";
 import task_management from "~/assets/images/projects/task-management.webp";
+import hyper_tech_study_case from "~/assets/images/projects/hyper_tech_study_case.webp";
 import npm from "~/assets/images/projects/npm.webp";
 
 export type Projects = {
@@ -70,6 +71,31 @@ export const PROJECTS: Projects = [
     techs: ["React", "Zustand", "Typescript", "Tailwind CSS"],
   },
   {
+    projectName: "Task Management Application",
+    imageLink: task_management,
+    url: "https://task-management-application-black.vercel.app/",
+    sourceUrl: "https://github.com/furkancan05/task-management-application",
+    description:
+      "This project is a study case application prepared for a private company. This application provides a simple system where users can manage their tasks.",
+    techs: [
+      "React",
+      "Zustand",
+      "Typescript",
+      "Local Storage",
+      "TailwindCSS",
+      "Framer Motion",
+    ],
+  },
+  {
+    projectName: "Hyper Teknoloji Study Case",
+    imageLink: hyper_tech_study_case,
+    url: "https://hyper-tech-study-case.vercel.app/",
+    sourceUrl: "https://github.com/furkancan05/hyper-tech-study-case",
+    description:
+      "This project is a working case application prepared for a private company. This application provides product listing and adding to cart operations via products coming from a public API.",
+    techs: ["NextJs", "Redux Toolkit", "Typescript", "TailwindCSS"],
+  },
+  {
     projectName: "Blindlover",
     imageLink: blindlover,
     url: "https://apps.apple.com/tr/app/blind-lover/id6740008681?l=tr",
@@ -84,23 +110,7 @@ export const PROJECTS: Projects = [
       "Google Ads",
     ],
   },
-  {
-    projectName: "Task Management Application",
-    imageLink: task_management,
-    url: "https://task-management-application-black.vercel.app/",
-    sourceUrl: "https://github.com/furkancan05/task-management-application",
-    description:
-      "This project is a study case application prepared for a private company. This application provides a simple system where users can manage their tasks.",
-    techs: [
-      "React",
-      "Zustand",
-      "Typescript",
-      "Local Storage",
-      "Zustand",
-      "TailwindCSS",
-      "Framer Motion",
-    ],
-  },
+
   {
     projectName: "Exchange Mobile",
     imageLink: exchange_mobile,
